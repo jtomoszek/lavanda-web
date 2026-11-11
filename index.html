@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lavanda | Návrhy zahrad, údržba zeleně a úklid domů</title>
+<meta name="description" content="Lavanda Art navrhuje a zakládá zahrady s jasným charakterem. Lavanda Service pečuje o zeleň i dům po celý rok. Moravskoslezský kraj.">
+<link rel="icon" href="img/lavanda-symbol-zakladni.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --slate:#606F84; --slate-d:#4b586a; --sky:#95B2C4; --mist:#F2F2F2; --sand:#D5D0AA; --sage:#9DA37F;
+  --tone:#E8E6D6; --ink:#2b3340; --mute:#6f7885; --line:rgba(43,51,64,.16); --line-l:rgba(242,242,242,.22);
+  --pad:clamp(20px,2.8vw,40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--mist);color:var(--ink);font-family:Poppins,Arial,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:300;letter-spacing:-.045em;line-height:.98}
+.label{font-size:13px;color:var(--mute)}
+.dark{background:var(--slate);color:var(--mist)}
+.dark .label{color:rgba(242,242,242,.7)}
+.tone{background:var(--tone)}
+section{padding:var(--pad)}
+.h-xl{font-size:clamp(34px,5vw,72px)}
+.todo{background:#fff1b8;color:#5c4a00;padding:0 5px;border-radius:3px;font-size:12px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:28px;padding:15px 18px;font-size:14px;font-weight:500;background:var(--slate);color:var(--mist);transition:background .2s}
+.btn:hover{background:var(--slate-d)}
+.btn.light{background:var(--mist);color:var(--ink)}
+.btn.light:hover{background:#fff}
+.btn i{font-style:normal;font-size:13px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;height:72px;background:var(--mist);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.32em;font-size:14px;color:var(--slate)}
+.brand img{height:38px}
+.links{display:flex;gap:34px;position:absolute;left:50%;transform:translateX(-50%)}
+.links a:hover{color:var(--slate)}
+nav .btn{padding:13px 16px}
+@media(max-width:900px){.links{display:none}}
+@media(max-width:560px){nav .btn{white-space:nowrap;padding:10px 12px;font-size:12px;gap:10px}.brand{letter-spacing:.2em;font-size:12px}.brand img{height:32px}.study .note{bottom:auto;top:var(--pad);left:var(--pad);right:auto;font-size:12px}.study .txt .label{visibility:hidden}.study .steps ul{gap:18px}}
+
+/* opening */
+.opening{position:relative;height:calc(100svh - 72px);min-height:560px;padding:0;color:#fff;overflow:hidden;background:#2b3340}
+.opening>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.opening::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,38,48,.5),rgba(30,38,48,.12) 35%,rgba(30,38,48,.62))}
+.op-in{position:absolute;inset:0;z-index:2;padding:var(--pad);display:flex;flex-direction:column}
+.meta{display:flex;justify-content:space-between;font-size:13px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.3);gap:16px}
+.meta span:nth-child(2){text-align:center}.meta span:last-child{text-align:right}
+.op-main{margin-top:auto;position:relative}
+.op-main h1{font-size:clamp(46px,10.2vw,150px);letter-spacing:-.055em;line-height:.92}
+.op-main h1 span{display:block}
+.op-main h1 span:first-child{text-align:right;padding-right:.04em}
+.op-lead{position:absolute;left:0;top:.6vw;max-width:300px;font-size:14px}
+.op-cta{position:absolute;right:0;bottom:1.4vw}
+.op-foot{display:flex;justify-content:space-between;font-size:13px;margin-top:28px;opacity:.9;gap:16px}
+@media(max-width:900px){.op-lead{position:static;margin-bottom:18px}.op-main h1 span:first-child{text-align:left}.op-cta{position:static;margin-top:20px;display:inline-flex}.meta span:nth-child(2){display:none}}
+
+/* scroll study (video) */
+.study{height:300vh;padding:0;position:relative;background:#1f2a22}
+.study .stick{position:sticky;top:72px;height:calc(100vh - 72px);overflow:hidden;color:#fff}
+.study canvas{position:absolute;inset:0;width:100%;height:100%}
+.study .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,32,28,.72),rgba(24,32,28,.25) 45%,rgba(24,32,28,0) 70%),linear-gradient(0deg,rgba(24,32,28,.6),rgba(24,32,28,0) 28%)}
+.study .txt{position:absolute;left:var(--pad);top:var(--pad);max-width:460px}
+.study .txt .label{color:rgba(255,255,255,.75)}
+.study h2{margin:22px 0 22px}
+.study .txt p{max-width:400px}
+.study .steps{position:absolute;left:var(--pad);right:var(--pad);bottom:var(--pad)}
+.study .steps ul{list-style:none;margin:0 0 16px;padding:0;display:flex;gap:34px;font-size:13px}
+.study .steps li{opacity:.5;transition:opacity .3s}
+.study .steps li.on{opacity:1}
+.bar{height:1px;background:rgba(255,255,255,.3);position:relative}
+.bar i{position:absolute;left:0;top:-1px;height:3px;background:#fff;width:0}
+.study .note{position:absolute;right:var(--pad);bottom:calc(var(--pad) + 30px);font-size:12px;opacity:.75}
+
+/* studio intro */
+.intro-top{display:grid;grid-template-columns:1fr 3fr;gap:24px;padding:60px 0 90px}
+.reveal{font-size:clamp(24px,2.9vw,42px);font-weight:300;letter-spacing:-.035em;line-height:1.16;max-width:1000px}
+.reveal span{opacity:.22;transition:opacity .25s}
+.reveal span.on{opacity:1}
+.stats{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;border-top:1px solid var(--line)}
+.stats .pic{grid-row:1/3;margin:24px 24px 0 0;min-height:520px}
+.stat{border-left:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 22px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between}
+.stat p{max-width:210px;font-size:14px}
+.stat b{font-weight:300;font-size:clamp(64px,7.5vw,112px);letter-spacing:-.06em;line-height:.9;text-align:right}
+.stat.quote{background:var(--slate);color:var(--mist);border:0}
+.stat.quote p{max-width:none;font-size:16px;line-height:1.45}
+.stat.quote a{font-size:13px;border-bottom:1px solid rgba(242,242,242,.5);align-self:flex-start;padding-bottom:3px}
+@media(max-width:900px){.intro-top{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats .pic{grid-column:1/3;grid-row:auto;margin:20px 0;min-height:320px}}
+
+/* slats image */
+.slats{position:relative;overflow:hidden;background:var(--tone)}
+.slats img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.slats u{position:absolute;top:0;bottom:0;width:calc(100%/7 + 1px);background:inherit;transform-origin:left;transform:scaleX(.42);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.slats.in u{transform:scaleX(0);visibility:hidden;transition:transform 1.1s cubic-bezier(.2,.7,.2,1),visibility 0s 1.4s}
+.dark .slats{background:var(--slate)}
+
+/* selected work */
+.rowhead{display:flex;justify-content:space-between;font-size:13px;padding-bottom:16px;border-bottom:1px solid var(--line-l);gap:16px}
+.rowhead a{border-bottom:1px solid currentColor}
+.feat{display:grid;grid-template-columns:1fr 2fr;gap:24px;padding-top:40px;position:relative}
+.feat .left{min-width:0;display:flex;flex-direction:column;justify-content:space-between;min-height:560px}
+.feat .left p{max-width:300px;margin-top:14px;font-size:15px}
+.feat h3{font-size:clamp(40px,5.6vw,84px);position:relative;z-index:2;white-space:nowrap}
+.feat .pic{min-height:560px}
+.spec{position:absolute;right:28px;bottom:28px;width:300px;background:var(--mist);color:var(--ink);padding:22px;z-index:3}
+.spec h4{margin:0 0 14px;font-weight:400;font-size:20px;letter-spacing:-.03em}
+.spec dl{margin:0 0 18px;font-size:13px}
+.spec dl div{display:flex;justify-content:space-between;padding:8px 0;border-top:1px solid var(--line)}
+.spec dt{color:var(--mute)}.spec dd{margin:0}
+.spec .btn{width:100%;justify-content:space-between}
+.list{margin-top:70px;border-top:1px solid var(--line-l)}
+.list a{display:grid;grid-template-columns:80px 1fr 1.1fr;align-items:center;padding:20px 0;border-bottom:1px solid var(--line-l);font-size:13px;transition:padding .25s}
+.list a:hover{padding-left:14px}
+.list b{font-weight:300;font-size:clamp(30px,4.2vw,60px);letter-spacing:-.045em;line-height:1}
+.list em{font-style:normal;opacity:.75;text-align:right}
+@media(max-width:900px){.feat{grid-template-columns:1fr}.feat .left{min-height:0}.feat h3{white-space:normal;margin-top:30px}.spec{position:static;width:auto;margin-top:16px}.feat .pic{min-height:300px}.list a{grid-template-columns:40px 1fr}.list em{display:none}}
+
+/* plan study */
+.plan{height:280vh;padding:0;position:relative}
+.plan .stick{position:sticky;top:72px;height:calc(100vh - 72px);padding:var(--pad);display:grid;grid-template-columns:1fr 1.5fr;gap:24px}
+.plan .txt{display:flex;flex-direction:column}
+.plan h2{margin:22px 0}
+.plan .txt p{max-width:400px}
+.plan .txt .btn{align-self:flex-start;margin-top:28px}
+.plan ul{list-style:none;margin:auto 0 0;padding:0;display:flex;gap:26px;font-size:13px;flex-wrap:wrap}
+.plan li{opacity:.4;transition:opacity .3s}.plan li.on{opacity:1}
+.plan .draw{display:flex;flex-direction:column;min-height:0}
+.plan svg{flex:1;min-height:0;width:100%}
+.plan .cap{font-size:12px;color:var(--mute);text-align:right;margin-top:8px}
+.plan svg .ly{opacity:0;transition:opacity .5s}
+.plan svg .ly.on{opacity:1}
+.plan svg .dr{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s ease}
+.plan svg .ly.on .dr{stroke-dashoffset:0}
+@media(max-width:900px){.plan .stick{grid-template-columns:1fr;grid-template-rows:auto 1fr}.plan .txt p,.plan .txt .btn{display:none}.plan ul{margin-top:10px;gap:14px}}
+
+/* disciplines */
+.disc-head{display:grid;grid-template-columns:2fr 1fr;gap:24px;padding:20px 0 50px}
+.disc-head p{max-width:420px;margin-top:10px}
+.disc{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:start}
+.disc article:nth-child(2){margin-top:90px}.disc article:nth-child(3){margin-top:40px}.disc article:nth-child(4){margin-top:130px}
+.disc .pic{aspect-ratio:4/5}
+.disc .t{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px}
+.disc h3{font-size:26px;font-weight:400;letter-spacing:-.035em}
+.disc .t span{font-size:12px;color:var(--mute)}
+.disc p{margin-top:10px;font-size:14px}
+.disc small{display:block;margin-top:12px;font-size:12px;color:var(--mute)}
+.disc .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);font-weight:600;margin-top:16px}
+@media(max-width:900px){.disc-head{grid-template-columns:1fr}.disc{grid-template-columns:1fr 1fr}.disc article{margin-top:0!important}}
+@media(max-width:560px){.disc{grid-template-columns:1fr}}
+
+/* process */
+.proc{display:grid;grid-template-columns:1fr 1.45fr;gap:36px}
+.proc .side{position:sticky;top:calc(72px + var(--pad));align-self:start}
+.proc .side .pic{aspect-ratio:1/1}
+.proc .side div.c{display:flex;justify-content:space-between;font-size:12px;margin-top:10px;opacity:.8}
+.proc h2{margin:18px 0 60px}
+.step{display:grid;grid-template-columns:1fr auto;gap:8px 20px;padding:22px 0 44px;border-top:1px solid var(--line-l)}
+.step span{font-size:12px;opacity:.75}
+.step h3{grid-column:1/3;font-size:clamp(28px,3.2vw,44px);margin-top:6px}
+.step p{grid-column:1/3;max-width:440px;opacity:.9;margin-top:6px}
+@media(max-width:900px){.proc{grid-template-columns:1fr}.proc .side{position:static}}
+
+/* materials */
+.mat-head{display:grid;grid-template-columns:2fr 1fr;gap:24px;padding:20px 0 60px}
+.mat-head p{max-width:400px;margin-top:10px}
+.mats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.mat .sw{aspect-ratio:1/1;display:flex;align-items:flex-end;padding:14px;font-size:12px;color:rgba(43,51,64,.75)}
+.mat h3{font-size:19px;font-weight:400;letter-spacing:-.03em;margin-top:12px;line-height:1.2}
+.mat p{font-size:13px;color:var(--mute);margin-top:4px}
+@media(max-width:900px){.mat-head{grid-template-columns:1fr}.mats{grid-template-columns:1fr 1fr}}
+
+/* recognition */
+.voice{display:grid;grid-template-columns:1fr 3fr;gap:36px;padding:20px 0 80px}
+.voice .ph{aspect-ratio:4/5;background:#dcd9c6;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;color:var(--mute);padding:16px}
+.voice blockquote{margin:0;font-size:clamp(22px,2.7vw,38px);font-weight:300;letter-spacing:-.035em;line-height:1.2;max-width:900px}
+.voice .who{margin-top:60px;padding-top:14px;border-top:1px solid var(--line);font-size:14px}
+.voice .who span{display:block;font-size:12px;color:var(--mute)}
+.recog{display:grid;grid-template-columns:1fr 3fr;gap:36px}
+.recog h3{font-size:22px;font-weight:400;letter-spacing:-.03em}
+.recog .rows div{display:grid;grid-template-columns:70px 1.6fr 1fr;padding:18px 0;border-top:1px solid var(--line);align-items:baseline;gap:12px}
+.recog .rows span{font-size:12px;color:var(--mute)}
+.recog .rows b{font-weight:400;font-size:18px;letter-spacing:-.02em}
+.recog .rows em{font-style:normal;font-size:13px}
+@media(max-width:900px){.voice,.recog{grid-template-columns:1fr}.voice .ph{max-width:220px}.recog .rows div{grid-template-columns:40px 1fr}.recog .rows em{grid-column:2}}
+
+/* footer */
+footer{padding:var(--pad)}
+.f-top{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;padding:10px 0 60px;border-bottom:1px solid var(--line-l)}
+.f-top h2{font-size:clamp(34px,4.6vw,66px);max-width:680px}
+.f-top .r{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:12px;font-size:13px}
+.f-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:26px 0 60px;font-size:13px}
+.f-cols h4{margin:0 0 14px;font-weight:400;font-size:12px;opacity:.7}
+.f-cols a,.f-cols p{display:block;margin-bottom:10px}
+.f-logo{padding:20px 0 50px;display:flex;justify-content:center}
+.f-logo img{width:min(880px,82%)}
+.f-bot{display:flex;justify-content:space-between;font-size:12px;opacity:.75;border-top:1px solid var(--line-l);padding-top:18px;gap:16px;flex-wrap:wrap}
+@media(max-width:900px){.f-top{grid-template-columns:1fr}.f-top .r{align-items:flex-start}.f-cols{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.slats u{display:none}.reveal span{opacity:1}}
+
+/* intro – logo drawn from contour lines */
+#intro{position:fixed;inset:0;z-index:1000;background:#F2F2F2;display:flex;align-items:center;justify-content:center;animation:inOut .7s cubic-bezier(.7,0,.2,1) 3.5s forwards}
+#intro svg{width:min(62vw,560px);height:auto;overflow:visible}
+#intro .in-l{stroke-dasharray:1;stroke-dashoffset:1;animation:inDraw 1.9s cubic-bezier(.6,0,.2,1) forwards;animation-delay:calc(.25s + var(--i)*.22s)}
+#intro .in-t{opacity:0;transform:translateY(3px);animation:inLet .6s ease-out forwards;animation-delay:calc(1.9s + var(--i)*.09s)}
+@keyframes inDraw{to{stroke-dashoffset:0}}
+@keyframes inLet{to{opacity:1;transform:none}}
+@keyframes inOut{to{opacity:0;visibility:hidden;pointer-events:none}}
+html.intro-on{overflow:hidden}
+@media(prefers-reduced-motion:reduce){#intro{display:none}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add("intro-on");window.scrollTo(0,0);if("scrollRestoration" in history)history.scrollRestoration="manual";setTimeout(function(){document.documentElement.classList.remove("intro-on")},3600);</script>
+<div id="intro" aria-hidden="true"><svg viewBox="0 0 280.537 213.054" fill="#606F84"><defs><mask id="inM" maskUnits="userSpaceOnUse" x="0" y="0" width="280.537" height="213.054"><g fill="none" stroke="#fff" stroke-width="2.4"><path class="in-l" style="--i:0" pathLength="1" d="M 22.558594 94.539062 C 27.039062 72.625 32.867188 49.289062 43.09375 31.308594 C 49.953125 19.242188 58.796875 9.585938 70.515625 4.332031 C 83.066406 -1.289062 98.925781 -1.867188 119.222656 5.132812 C 147.085938 14.746094 149.8125 49.242188 132.074219 70.417969 C 124.402344 79.578125 112.902344 82.238281 102.265625 85.625 C 91.898438 88.925781 82.363281 92.933594 78.332031 104.835938 C 75.757812 112.429688 78.078125 122.789062 79.691406 134.730469 C 82.148438 152.929688 83.054688 174.738281 63.507812 196.09375 C 57.882812 202.230469 52.816406 206.453125 48.285156 209.007812 C 43.660156 211.617188 39.570312 212.503906 36 211.960938 C 31.21875 211.234375 27.332031 207.949219 24.316406 202.65625 C 19.90625 194.917969 17.339844 182.839844 16.425781 168.394531 C 15.058594 146.839844 17.351562 120 22.558594 94.539062 Z"/><path class="in-l" style="--i:1" pathLength="1" d="M 29.058594 99.722656 C 33.605469 75.8125 42.746094 46.410156 58.09375 30.460938 C 68.445312 19.707031 81.597656 15.007812 98.054688 22.042969 C 117.515625 30.359375 119.855469 55.800781 107.222656 72.007812 C 101.757812 79.019531 93.570312 81.0625 85.992188 83.65625 C 78.679688 86.160156 71.949219 89.191406 69.101562 98.214844 C 67.277344 104.003906 68.316406 111.824219 68.734375 120.839844 C 69.371094 134.589844 68.628906 151.058594 54.742188 167.355469 C 49.742188 173.226562 45.441406 177.023438 41.785156 179.066406 C 39.265625 180.476562 37.03125 181.058594 35.082031 180.941406 C 32.585938 180.792969 30.519531 179.515625 28.867188 177.261719 C 27.285156 175.105469 26.074219 172.035156 25.21875 168.222656 C 21.867188 153.273438 23.917969 126.722656 29.058594 99.722656 Z"/><path class="in-l" style="--i:2" pathLength="1" d="M 35.113281 97.78125 C 38.359375 78.699219 45.882812 55.171875 57.636719 42.390625 C 65.605469 33.722656 75.5 29.945312 87.308594 35.585938 C 94.300781 38.925781 98.574219 44.046875 99.980469 49.941406 C 101.386719 55.828125 99.933594 62.507812 95.402344 69.007812 C 91.507812 74.59375 83.785156 77.761719 76.492188 81.367188 C 69.4375 84.851562 62.773438 88.746094 60.742188 95.949219 C 59.445312 100.550781 60.527344 106.796875 61.234375 113.992188 C 62.3125 125.027344 62.554688 138.25 52.628906 151.269531 C 48.808594 156.28125 45.582031 159.414062 42.902344 160.980469 C 40.75 162.242188 38.914062 162.511719 37.378906 162 C 35.847656 161.492188 34.582031 160.1875 33.613281 158.171875 C 31.800781 154.417969 30.957031 148.105469 30.910156 140.207031 C 30.835938 128.492188 32.476562 113.261719 35.113281 97.78125 Z"/><path class="in-l" style="--i:3" pathLength="1" d="M 158.046875 105.617188 C 168.089844 89.875 176.152344 85.089844 182.585938 84.828125 C 186.9375 84.652344 190.589844 86.53125 193.671875 88.605469 C 206.417969 97.1875 208.09375 108.074219 206.453125 121.546875 C 205.59375 128.589844 204.71875 138.988281 201.742188 146.554688 C 199.6875 151.777344 196.609375 155.652344 191.964844 156.367188 C 175.210938 158.953125 164.472656 154.40625 158.394531 146.835938 C 149.277344 135.484375 150.636719 117.230469 158.046875 105.617188 Z"/><path class="in-l" style="--i:4" pathLength="1" d="M 165.753906 105.9375 C 172.507812 96.144531 177.9375 93.183594 182.265625 93.023438 C 185.203125 92.914062 187.671875 94.082031 189.753906 95.378906 C 198.347656 100.734375 199.484375 107.523438 198.375 115.933594 C 197.800781 120.296875 197.210938 126.738281 195.214844 131.429688 C 193.816406 134.722656 191.714844 137.15625 188.550781 137.609375 C 177.292969 139.214844 170.085938 136.367188 166 131.660156 C 159.851562 124.578125 160.757812 113.183594 165.753906 105.9375 Z"/></g></mask></defs><g mask="url(#inM)"><path fill-rule="evenodd" d="M 22.558594 94.539062 C 27.039062 72.625 32.867188 49.289062 43.09375 31.308594 C 49.953125 19.242188 58.796875 9.585938 70.515625 4.332031 C 83.066406 -1.289062 98.925781 -1.867188 119.222656 5.132812 C 147.085938 14.746094 149.8125 49.242188 132.074219 70.417969 C 124.402344 79.578125 112.902344 82.238281 102.265625 85.625 C 91.898438 88.925781 82.363281 92.933594 78.332031 104.835938 C 75.757812 112.429688 78.078125 122.789062 79.691406 134.730469 C 82.148438 152.929688 83.054688 174.738281 63.507812 196.09375 C 57.882812 202.230469 52.816406 206.453125 48.285156 209.007812 C 43.660156 211.617188 39.570312 212.503906 36 211.960938 C 31.21875 211.234375 27.332031 207.949219 24.316406 202.65625 C 19.90625 194.917969 17.339844 182.839844 16.425781 168.394531 C 15.058594 146.839844 17.351562 120 22.558594 94.539062 Z M 23.652344 94.761719 C 16.453125 129.960938 14.832031 167.808594 20.8125 190.53125 C 22.292969 196.152344 24.234375 200.839844 26.683594 204.316406 C 29.078125 207.714844 31.949219 209.941406 35.347656 210.703125 C 38.765625 211.472656 42.699219 210.757812 47.1875 208.339844 C 51.78125 205.867188 56.933594 201.621094 62.683594 195.339844 C 81.941406 174.304688 81.007812 152.808594 78.585938 134.878906 C 76.945312 122.734375 74.660156 112.199219 77.277344 104.480469 C 81.441406 92.1875 91.222656 87.972656 101.929688 84.5625 C 112.367188 81.238281 123.6875 78.695312 131.21875 69.703125 C 148.46875 49.109375 145.953125 15.535156 118.859375 6.1875 C 98.902344 -0.695312 83.308594 -0.175781 70.972656 5.351562 C 59.464844 10.507812 50.800781 20.011719 44.0625 31.859375 C 33.890625 49.746094 28.109375 72.964844 23.652344 94.761719 Z M 23.652344 94.761719 "/><path fill-rule="evenodd" d="M 29.058594 99.722656 C 33.605469 75.8125 42.746094 46.410156 58.09375 30.460938 C 68.445312 19.707031 81.597656 15.007812 98.054688 22.042969 C 117.515625 30.359375 119.855469 55.800781 107.222656 72.007812 C 101.757812 79.019531 93.570312 81.0625 85.992188 83.65625 C 78.679688 86.160156 71.949219 89.191406 69.101562 98.214844 C 67.277344 104.003906 68.316406 111.824219 68.734375 120.839844 C 69.371094 134.589844 68.628906 151.058594 54.742188 167.355469 C 49.742188 173.226562 45.441406 177.023438 41.785156 179.066406 C 39.265625 180.476562 37.03125 181.058594 35.082031 180.941406 C 32.585938 180.792969 30.519531 179.515625 28.867188 177.261719 C 27.285156 175.105469 26.074219 172.035156 25.21875 168.222656 C 21.867188 153.273438 23.917969 126.722656 29.058594 99.722656 Z M 30.152344 99.929688 C 25.046875 126.753906 22.976562 153.128906 26.304688 167.976562 C 27.59375 173.722656 29.65625 177.722656 32.753906 179.214844 C 35.027344 180.3125 37.832031 180 41.242188 178.09375 C 44.816406 176.09375 49.007812 172.371094 53.894531 166.632812 C 67.546875 150.609375 68.246094 134.410156 67.621094 120.890625 C 67.195312 111.722656 66.183594 103.765625 68.039062 97.878906 C 71.011719 88.453125 77.992188 85.214844 85.632812 82.601562 C 93.011719 80.074219 101.019531 78.152344 106.34375 71.324219 C 118.539062 55.675781 116.402344 31.097656 97.617188 23.070312 C 77.65625 14.535156 62.71875 23.84375 51.828125 40.128906 C 40.8125 56.589844 33.914062 80.15625 30.152344 99.929688 Z M 30.152344 99.929688 "/><path fill-rule="evenodd" d="M 35.113281 97.78125 C 38.359375 78.699219 45.882812 55.171875 57.636719 42.390625 C 65.605469 33.722656 75.5 29.945312 87.308594 35.585938 C 94.300781 38.925781 98.574219 44.046875 99.980469 49.941406 C 101.386719 55.828125 99.933594 62.507812 95.402344 69.007812 C 91.507812 74.59375 83.785156 77.761719 76.492188 81.367188 C 69.4375 84.851562 62.773438 88.746094 60.742188 95.949219 C 59.445312 100.550781 60.527344 106.796875 61.234375 113.992188 C 62.3125 125.027344 62.554688 138.25 52.628906 151.269531 C 48.808594 156.28125 45.582031 159.414062 42.902344 160.980469 C 40.75 162.242188 38.914062 162.511719 37.378906 162 C 35.847656 161.492188 34.582031 160.1875 33.613281 158.171875 C 31.800781 154.417969 30.957031 148.105469 30.910156 140.207031 C 30.835938 128.492188 32.476562 113.261719 35.113281 97.78125 Z M 36.210938 97.96875 C 32.574219 119.34375 30.824219 140.242188 32.921875 151.957031 C 33.433594 154.808594 34.167969 157.105469 35.175781 158.707031 C 36.101562 160.183594 37.253906 161.046875 38.691406 161.125 C 39.886719 161.191406 41.253906 160.730469 42.820312 159.726562 C 45.316406 158.121094 48.269531 155.148438 51.742188 150.59375 C 61.457031 137.851562 61.179688 124.902344 60.125 114.101562 C 59.402344 106.742188 58.34375 100.351562 59.667969 95.648438 C 61.785156 88.144531 68.648438 84 76 80.367188 C 83.113281 76.851562 90.6875 73.816406 94.488281 68.371094 C 98.808594 62.171875 100.238281 55.8125 98.898438 50.199219 C 97.5625 44.601562 93.472656 39.765625 86.828125 36.589844 C 75.53125 31.195312 66.078125 34.855469 58.457031 43.144531 C 46.828125 55.789062 39.425781 79.089844 36.210938 97.96875 Z M 36.210938 97.96875 "/><path fill-rule="evenodd" d="M 158.046875 105.617188 C 168.089844 89.875 176.152344 85.089844 182.585938 84.828125 C 186.9375 84.652344 190.589844 86.53125 193.671875 88.605469 C 206.417969 97.1875 208.09375 108.074219 206.453125 121.546875 C 205.59375 128.589844 204.71875 138.988281 201.742188 146.554688 C 199.6875 151.777344 196.609375 155.652344 191.964844 156.367188 C 175.210938 158.953125 164.472656 154.40625 158.394531 146.835938 C 149.277344 135.484375 150.636719 117.230469 158.046875 105.617188 Z M 158.984375 106.21875 C 151.8125 117.464844 150.433594 135.144531 159.265625 146.136719 C 165.148438 153.464844 175.574219 157.769531 191.796875 155.269531 C 196.070312 154.609375 198.8125 150.953125 200.703125 146.144531 C 203.648438 138.664062 204.5 128.375 205.347656 121.410156 C 206.933594 108.382812 205.375 97.828125 193.050781 89.53125 C 190.148438 87.578125 186.722656 85.777344 182.632812 85.941406 C 176.398438 86.195312 168.714844 90.972656 158.984375 106.21875 Z M 158.984375 106.21875 "/><path fill-rule="evenodd" d="M 165.753906 105.9375 C 172.507812 96.144531 177.9375 93.183594 182.265625 93.023438 C 185.203125 92.914062 187.671875 94.082031 189.753906 95.378906 C 198.347656 100.734375 199.484375 107.523438 198.375 115.933594 C 197.800781 120.296875 197.210938 126.738281 195.214844 131.429688 C 193.816406 134.722656 191.714844 137.15625 188.550781 137.609375 C 177.292969 139.214844 170.085938 136.367188 166 131.660156 C 159.851562 124.578125 160.757812 113.183594 165.753906 105.9375 Z M 166.671875 106.570312 C 161.941406 113.433594 161.019531 124.222656 166.84375 130.929688 C 170.742188 135.421875 177.648438 138.039062 188.390625 136.503906 C 191.175781 136.105469 192.957031 133.890625 194.191406 130.992188 C 196.148438 126.390625 196.707031 120.066406 197.269531 115.785156 C 198.316406 107.835938 197.292969 101.390625 189.164062 96.324219 C 187.253906 95.136719 185 94.035156 182.308594 94.136719 C 178.183594 94.292969 173.109375 97.234375 166.671875 106.570312 Z M 166.671875 106.570312 "/></g><g><path class="in-t" style="--i:0" d="M 4.804688 122.699219 L 10.585938 122.699219 L 10.585938 126.105469 L 0.390625 126.105469 L 0.390625 107.984375 L 4.804688 107.984375 Z M 4.804688 122.699219 "/><path class="in-t" style="--i:1" d="M 49.796875 122.902344 L 43.03125 122.902344 L 41.949219 126.105469 L 37.328125 126.105469 L 43.882812 107.984375 L 48.996094 107.984375 L 55.550781 126.105469 L 50.878906 126.105469 Z M 48.660156 119.496094 L 46.414062 112.863281 L 44.195312 119.496094 Z M 48.660156 119.496094 "/><path class="in-t" style="--i:2" d="M 100.363281 107.984375 L 93.9375 126.105469 L 88.414062 126.105469 L 81.984375 107.984375 L 86.683594 107.984375 L 91.175781 121.664062 L 95.691406 107.984375 Z M 100.363281 107.984375 "/><path class="in-t" style="--i:3" d="M 139.289062 122.902344 L 132.527344 122.902344 L 131.441406 126.105469 L 126.820312 126.105469 L 133.378906 107.984375 L 138.488281 107.984375 L 145.046875 126.105469 L 140.375 126.105469 Z M 138.152344 119.496094 L 135.90625 112.863281 L 133.6875 119.496094 Z M 138.152344 119.496094 "/><path class="in-t" style="--i:4" d="M 189.058594 126.105469 L 184.644531 126.105469 L 177.261719 114.929688 L 177.261719 126.105469 L 172.847656 126.105469 L 172.847656 107.984375 L 177.261719 107.984375 L 184.644531 119.214844 L 184.644531 107.984375 L 189.058594 107.984375 Z M 189.058594 126.105469 "/><path class="in-t" style="--i:5" d="M 224.859375 107.984375 C 226.769531 107.984375 228.4375 108.363281 229.867188 109.121094 C 231.296875 109.878906 232.402344 110.941406 233.183594 112.308594 C 233.96875 113.675781 234.359375 115.253906 234.359375 117.042969 C 234.359375 118.816406 233.96875 120.390625 233.183594 121.769531 C 232.402344 123.144531 231.292969 124.210938 229.855469 124.96875 C 228.417969 125.726562 226.753906 126.105469 224.859375 126.105469 L 218.070312 126.105469 L 218.070312 107.984375 Z M 224.574219 122.285156 C 226.246094 122.285156 227.546875 121.828125 228.472656 120.917969 C 229.402344 120.003906 229.867188 118.714844 229.867188 117.042969 C 229.867188 115.375 229.402344 114.078125 228.472656 113.148438 C 227.546875 112.21875 226.246094 111.753906 224.574219 111.753906 L 222.484375 111.753906 L 222.484375 122.285156 Z M 224.574219 122.285156 "/><path class="in-t" style="--i:6" d="M 273.929688 122.902344 L 267.167969 122.902344 L 266.082031 126.105469 L 261.464844 126.105469 L 268.019531 107.984375 L 273.128906 107.984375 L 279.6875 126.105469 L 275.015625 126.105469 Z M 272.796875 119.496094 L 270.550781 112.863281 L 268.328125 119.496094 Z M 272.796875 119.496094 "/></g></svg></div>
+
+<nav>
+  <a class="brand" href="#top"><img src="img/lavanda-symbol-zakladni.svg" alt="">LAVANDA</a>
+  <div class="links"><a href="#ukazka">Ukázka</a><a href="#studio">O nás</a><a href="#sluzby">Služby</a><a href="#kontakt">Kontakt</a></div>
+  <a class="btn" href="#kontakt">Domluvit konzultaci <i>↗</i></a>
+</nav>
+
+<!-- OPENING -->
+<section class="opening" id="top">
+  <img src="img/hero.jpg" alt="Japonská zahrada s tvarovaným javorem a nášlapnou cestou">
+  <div class="op-in">
+    <div class="meta"><span>Návrhy a realizace zahrad</span><span>Moravskoslezský kraj</span><span>Lavanda Art · Lavanda Service</span></div>
+    <div class="op-main">
+      <p class="op-lead">Navrhujeme a zakládáme zahrady s jasným charakterem. A po celý rok pečujeme o zeleň i o dům.</p>
+      <h1><span>Zahrada jiná</span><span>než sousedova.</span></h1>
+      <a class="btn light op-cta" href="#ukazka">Prohlédnout návrh <i>↗</i></a>
+    </div>
+    <div class="op-foot"><span>Posouvejte dolů</span><span>Ukázka: Relaxační zahrada s růžovými oblouky, 2026</span></div>
+  </div>
+</section>
+
+<!-- SCROLL STUDY: VIDEO -->
+<section class="study" id="prochazka">
+  <div class="stick">
+    <canvas id="cv" width="1280" height="720"></canvas>
+    <div class="shade"></div>
+    <div class="txt">
+      <div class="label">Procházka zahradou</div>
+      <h2 class="h-xl">Zahradou se prochází, krok za krokem.</h2>
+      <p>Dobrá zahrada se neodhalí celá najednou. Posouvejte stránku a projděte se jednou z těch, které nás inspirují: nášlapná cesta, tvarovaný javor, mech místo trávníku.</p>
+    </div>
+    <div class="note">Ilustrační záběr japonské zahrady</div>
+    <div class="steps">
+      <ul><li>01 Cesta</li><li>02 Kámen</li><li>03 Strom</li><li>04 Stín</li></ul>
+      <div class="bar"><i id="pbar"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO INTRO -->
+<section id="studio">
+  <div class="intro-top">
+    <div class="label">O Lavandě</div>
+    <p class="reveal">Navrhujeme zahrady, které mají pevnou kostru ze zídek, cest a záhonů a rostliny, které drží tvar desítky let. Každá začíná pohledem shora na pozemek a končí místem, kde se dobře žije a o které se někdo stará.</p>
+  </div>
+  <div class="stats">
+    <div class="pic slats"><img src="img/zahrada-007.jpg" alt="Oblouk s popínavými růžemi a trvalkový záhon"></div>
+    <div class="stat"><p>Lidí v realizačním týmu, který Hanna vedla na Ukrajině</p><b>5</b></div>
+    <div class="stat"><p>Měsíců v roce pečujeme o zahradu i o dům</p><b>12</b></div>
+    <div class="stat"><p>Části jedné značky: Lavanda Art tvoří, Lavanda Service pečuje</p><b>2</b></div>
+    <div class="stat quote"><p>Zahrada není jen to, co vidíte v květnu. Je to i to, jak vypadá v lednu z okna kuchyně.</p><a href="#hanna">Kdo za Lavandou stojí</a></div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section class="dark" id="ukazka">
+  <div class="rowhead"><span>Ukázka návrhu</span><span>Rodinná zahrada, 2026</span><a href="#co-navrhujeme">Co všechno navrhujeme</a></div>
+  <div class="feat">
+    <div class="left">
+      <div><div class="label">Vybraný projekt</div><p>Zahrada u letního domu. Majitelé chtěli soukromí, místo k odpočinku a květinové záhony, které působí uspořádaně.</p></div>
+      <h3>Zahrada s růžovými oblouky</h3>
+    </div>
+    <div class="pic slats"><img src="img/zahrada-012.jpg" alt="Vizualizace zahrady s bazénem a květinovými záhony"></div>
+    <div class="spec">
+      <h4>Zahrada s růžovými oblouky</h4>
+      <dl><div><dt>Místo</dt><dd>Osoblažsko</dd></div><div><dt>Rok</dt><dd>2026</dd></div><div><dt>Typ</dt><dd>Rodinná zahrada</dd></div><div><dt>Plocha</dt><dd>2 790 m²</dd></div></dl>
+      <a class="btn" href="#pudorys">Jak vznikala <i>↗</i></a>
+    </div>
+  </div>
+  <div class="list" id="co-navrhujeme">
+    <a href="#kontakt"><span>02</span><b>Japonské zahrady</b><em>Kámen, voda, střih. Přizpůsobené zdejšímu klimatu.</em></a>
+    <a href="#kontakt"><span>03</span><b>Tvarované stromy</b><em>Zahradní bonsaje a solitéry jako hlavní bod zahrady.</em></a>
+    <a href="#kontakt"><span>04</span><b>Zídky a cesty</b><em>Opěrné zídky, vyvýšené záhony, nášlapy.</em></a>
+    <a href="#kontakt"><span>05</span><b>Rodinné zahrady</b><em>Pískoviště ve stínu, bazén, ohniště, zelenina.</em></a>
+    <a href="#kontakt"><span>06</span><b>Úpravy zahrad</b><em>Ponecháme, co má smysl, a doplníme, co chybí.</em></a>
+  </div>
+</section>
+
+<!-- PLAN STUDY -->
+<section class="plan" id="pudorys">
+  <div class="stick">
+    <div class="txt">
+      <div class="label">Půdorys</div>
+      <h2 class="h-xl">Každá zahrada začíná čarou na plánu.</h2>
+      <p>Dřív než rostliny přijde na řadu půdorys. Posouvejte a sledujte, jak vznikala Zahrada s růžovými oblouky: pozemek, cesty, záhony, stromy a nakonec myšlenky, které za tím stojí.</p>
+      <a class="btn" href="#kontakt">Chci návrh zahrady <i>↗</i></a>
+      <ul id="planSteps"><li>01 Pozemek</li><li>02 Cesty</li><li>03 Záhony</li><li>04 Stromy</li><li>05 Poznámky</li></ul>
+    </div>
+    <div class="draw">
+      <svg viewBox="0 0 800 520" fill="none" stroke="#606F84" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" font-family="Poppins" font-size="11">
+        <g class="ly">
+          <path class="dr" pathLength="1" d="M70 110 L520 60 L740 80 L760 400 L560 430 L555 380 L380 400 L110 450 Z"/>
+          <path class="dr" pathLength="1" d="M330 95 H520 V175 H330 Z" stroke-width="2.4"/>
+          <path class="dr" pathLength="1" d="M330 175 H520 V205 H330 Z"/>
+          <path class="dr" pathLength="1" d="M400 330 H470 V372 H400 Z"/>
+          <text x="425" y="140" fill="#606F84" stroke="none" text-anchor="middle">dům</text>
+          <text x="425" y="194" fill="#606F84" stroke="none" text-anchor="middle">terasa</text>
+          <text x="435" y="355" fill="#606F84" stroke="none" text-anchor="middle" font-size="9">domek</text>
+        </g>
+        <g class="ly">
+          <path class="dr" pathLength="1" d="M700 235 C640 225 560 222 500 232 C470 238 452 270 446 328" stroke-dasharray="none" stroke="#95B2C4" stroke-width="10" opacity=".55"/>
+          <path class="dr" pathLength="1" d="M640 190 H735 V250 H640 Z"/>
+          <text x="687" y="224" fill="#606F84" stroke="none" text-anchor="middle" font-size="9">parkování</text>
+          <path class="dr" pathLength="1" d="M612 216 v36 M560 212 v36" stroke-width="3"/>
+        </g>
+        <g class="ly" stroke="#9DA37F" fill="#9DA37F" fill-opacity=".22">
+          <path class="dr" pathLength="1" d="M505 262 C505 236 560 232 600 240 C640 248 650 290 615 302 C575 316 505 300 505 262 Z"/>
+          <path class="dr" pathLength="1" d="M335 212 H515 V236 C450 250 390 248 335 236 Z"/>
+          <path class="dr" pathLength="1" d="M545 100 C580 92 640 96 655 112 C650 132 570 134 545 124 Z"/>
+          <path class="dr" pathLength="1" d="M300 318 C300 296 350 292 362 316 C370 340 318 350 300 318 Z"/>
+          <path class="dr" pathLength="1" d="M392 322 C380 300 480 298 478 322"/>
+        </g>
+        <g class="ly" stroke="#606F84">
+          <g fill="#606F84" fill-opacity=".1">
+            <circle class="dr" pathLength="1" cx="150" cy="170" r="20"/><circle class="dr" pathLength="1" cx="215" cy="150" r="17"/><circle class="dr" pathLength="1" cx="270" cy="185" r="19"/>
+            <circle class="dr" pathLength="1" cx="165" cy="250" r="22"/><circle class="dr" pathLength="1" cx="235" cy="240" r="16"/><circle class="dr" pathLength="1" cx="190" cy="330" r="24"/>
+            <circle class="dr" pathLength="1" cx="270" cy="300" r="15"/><circle class="dr" pathLength="1" cx="150" cy="390" r="26"/><circle class="dr" pathLength="1" cx="330" cy="318" r="12"/>
+            <circle class="dr" pathLength="1" cx="655" cy="172" r="18"/><circle class="dr" pathLength="1" cx="655" cy="268" r="18"/><circle class="dr" pathLength="1" cx="560" cy="80" r="13"/>
+            <circle class="dr" pathLength="1" cx="680" cy="350" r="24"/>
+          </g>
+          <path d="M82 118 L524 70 L730 90 L748 392 L568 420" stroke-dasharray="2 5" stroke-width="5" opacity=".35"/>
+        </g>
+        <g class="ly" stroke="none" fill="#606F84">
+          <g><circle cx="470" cy="270" r="10"/><text x="470" y="274" fill="#F2F2F2" text-anchor="middle">1</text></g>
+          <g><circle cx="586" cy="268" r="10"/><text x="586" y="272" fill="#F2F2F2" text-anchor="middle">2</text></g>
+          <g><circle cx="190" cy="290" r="10"/><text x="190" y="294" fill="#F2F2F2" text-anchor="middle">3</text></g>
+          <text x="70" y="486"><tspan font-weight="600">1</tspan>  Vyšlapaná cestička zůstala, jen dostala nášlapy</text>
+          <text x="70" y="503"><tspan font-weight="600">2</tspan>  Dva oblouky s růžemi a symetrický záhon kolem nich</text>
+          <text x="430" y="486"><tspan font-weight="600">3</tspan>  Ovocné stromy zůstaly tam, kde rostly</text>
+          <text x="430" y="503" opacity=".7">Živý plot z bobkovišně po obvodu pozemku</text>
+        </g>
+      </svg>
+      <div class="cap">Zahrada s růžovými oblouky, zjednodušený půdorys</div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCIPLINES -->
+<section class="tone" id="sluzby">
+  <div class="disc-head">
+    <h2 class="h-xl">Jedna značka, od první čáry po poslední list.</h2>
+    <div><div class="label">Služby</div><p>Lavanda má dvě části. Lavanda Art zahradu vymyslí a založí. Lavanda Service se o ni stará a uklidí vám i dům. Využít můžete každou zvlášť, nebo obě dohromady.</p></div>
+  </div>
+  <div class="disc">
+    <article><div class="pic slats"><img src="img/zahrada-003.jpg" alt="Vizualizace záhonů a oblouku s růžemi"></div><div class="tag">Lavanda Art</div><div class="t"><h3>Návrh</h3><span>01</span></div><p>Návrh zahrady, který uvidíte dřív, než se kopne do země.</p><small>Studie, 3D pohledy, video, osazovací plány, rozpočet</small></article>
+    <article><div class="pic slats"><img src="img/zahon.jpg" alt="Vyvýšený dřevěný záhon a kamenné nášlapy"></div><div class="tag">Lavanda Art</div><div class="t"><h3>Realizace</h3><span>02</span></div><p>Zahradu založíme najednou, nebo po etapách podle rozpočtu.</p><small>Záhony, zídky, cesty, výsadba solitérů</small></article>
+    <article><div class="pic slats"><img src="img/japan-mid.jpg" alt="Tvarovaný javor v japonské zahradě"></div><div class="tag">Lavanda Service</div><div class="t"><h3>Údržba zeleně</h3><span>03</span></div><p>Pravidelná péče od lidí, kteří vědí, co na zahradě roste.</p><small>Trávník, řez a tvarování, záhony, zazimování</small></article>
+    <article><div class="pic slats"><img src="img/zahrada-022.jpg" alt="Pohled z terasy domu do zahrady"></div><div class="tag">Lavanda Service</div><div class="t"><h3>Úklid domů</h3><span>04</span></div><p>Stejný tým uklidí i uvnitř. Celoročně, i když zahrada spí.</p><small>Pravidelný a sezonní úklid, okna, terasy <em class="todo">potvrdit rozsah</em></small></article>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="dark" id="postup">
+  <div class="proc">
+    <div class="side"><div class="pic slats"><img src="img/zahrada-013.jpg" alt="Vizualizace záhonu podél živého plotu"></div><div class="c"><span>Krok 02</span><span>3D vizualizace návrhu</span></div></div>
+    <div>
+      <div class="label">Jak pracujeme</div>
+      <h2 class="h-xl">Pět kroků od první návštěvy po zahradu, o kterou je postaráno.</h2>
+      <div class="step"><span>01</span><span>u vás na zahradě</span><h3>Konzultace</h3><p>Projdeme pozemek, zeptáme se, jak na zahradě chcete žít, a zaměříme, co už na ní roste.</p></div>
+      <div class="step"><span>02</span><span>3D pohledy a video</span><h3>Návrh</h3><p>Studie, vizualizace a video, ve kterém se zahradou projdete. O tom, co se vám líbí, rozhodnete před realizací.</p></div>
+      <div class="step"><span>03</span><span>položkově</span><h3>Rozpočet</h3><p>Osazovací plány, seznam rostlin s dobou kvetení a rozpočet na rostliny i práce.</p></div>
+      <div class="step"><span>04</span><span>najednou i po etapách</span><h3>Realizace</h3><p>Zídky, cesty, záhony a výsadba. Vzrostlý tvarovaný strom udělá ze zahrady hotové místo během jedné sezony.</p></div>
+      <div class="step"><span>05</span><span>celoročně</span><h3>Péče</h3><p>Zahradu předáme s návodem k péči. Pokud chcete, naváže Lavanda Service údržbou zeleně a úklidem domu.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section id="rostliny">
+  <div class="label">Rostliny a prvky</div>
+  <div class="mat-head">
+    <h2 class="h-xl">Osm věcí, ke kterým se stále vracíme.</h2>
+    <p>Raději pár dobře vybraných rostlin a poctivých materiálů než všechno najednou. Každá z nich drží tvar a po deseti letech vypadá lépe než první rok.</p>
+  </div>
+  <div class="mats">
+    <div class="mat"><div class="sw" style="background:#9DA37F">Niwaki</div><h3>Zahradní bonsaj</h3><p>Tvarovaný solitér jako hlavní bod zahrady</p></div>
+    <div class="mat"><div class="sw" style="background:#D5D0AA">Rosa</div><h3>Popínavé růže</h3><p>Na dřevěných obloucích nad cestou</p></div>
+    <div class="mat"><div class="sw" style="background:#95B2C4">Lavandula</div><h3>Levandule</h3><p>Lemy záhonů, vůně u terasy</p></div>
+    <div class="mat"><div class="sw" style="background:#606F84;color:#F2F2F2">Prunus laurocerasus</div><h3>Bobkovišeň</h3><p>Stálezelený živý plot po obvodu</p></div>
+    <div class="mat"><div class="sw" style="background:#c9cfd6">Kámen</div><h3>Kamenné nášlapy</h3><p>Cesta, která vede zahradou</p></div>
+    <div class="mat"><div class="sw" style="background:#E8E6D6">Zídka</div><h3>Opěrné zídky</h3><p>Řád na zahradě i v zimě</p></div>
+    <div class="mat"><div class="sw" style="background:#b9bf9d">Miscanthus</div><h3>Okrasné trávy</h3><p>Pohyb a struktura mezi trvalkami</p></div>
+    <div class="mat"><div class="sw" style="background:#aebfcc">Magnolia</div><h3>Magnolie</h3><p>Nízký kvetoucí strom u domu</p></div>
+  </div>
+</section>
+
+<!-- VOICE + WHAT YOU GET -->
+<section class="tone" id="hanna">
+  <div class="voice">
+    <div class="ph">Portrét<br>Hanna Zhukova<br><em class="todo">doplnit foto</em></div>
+    <div>
+      <blockquote>„Nejvíc mě baví rostliny. Dobře vybraný strom udělá pro zahradu víc než cokoli jiného.“</blockquote>
+      <div class="who">Hanna Zhukova<span>zahradní architektka, zakladatelka Lavandy. Na Ukrajině vedla ateliér Green Art.</span></div>
+    </div>
+  </div>
+  <div class="recog">
+    <div><h3>Co dostanete</h3><div class="label" style="margin-top:6px">Obsah každého návrhu</div></div>
+    <div class="rows">
+      <div><span>01</span><b>Studie zahrady</b><em>Půdorys s rozmístěním všech prvků</em></div>
+      <div><span>02</span><b>3D pohledy a video</b><em>Zahrada z míst, odkud se na ni budete dívat</em></div>
+      <div><span>03</span><b>Osazovací plány</b><em>Každý záhon zvlášť, rostlinu po rostlině</em></div>
+      <div><span>04</span><b>Kalendář kvetení</b><em>Co kvete od jara do podzimu</em></div>
+      <div><span>05</span><b>Položkový rozpočet</b><em>Rostliny i zahradní práce</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="dark" id="kontakt">
+  <div class="f-top">
+    <div><div class="label" style="margin-bottom:18px">Domluvit konzultaci</div><h2>Máte pozemek, zahradu nebo jen nápad? Pojďme nakreslit první čáru.</h2></div>
+    <div class="r"><a class="btn light" href="mailto:">Napsat e-mail <i>↗</i></a><span><em class="todo">doplnit e-mail</em></span></div>
+  </div>
+  <div class="f-cols">
+    <div><h4>Kde působíme</h4><p>Moravskoslezský kraj <em class="todo">upřesnit</em></p></div>
+    <div><h4>Kontakt</h4><p><em class="todo">e-mail</em></p><p><em class="todo">telefon</em></p></div>
+    <div><h4>Stránky</h4><a href="#ukazka">Ukázka</a><a href="#studio">O nás</a><a href="#sluzby">Služby</a><a href="#postup">Jak pracujeme</a></div>
+    <div><h4>Sledujte</h4><p><em class="todo">Instagram, Facebook</em></p></div>
+  </div>
+  <div class="f-logo"><img src="img/lavanda-logo-inverzni.svg" alt="Lavanda"></div>
+  <div class="f-bot"><span>© 2026 Lavanda. Lavanda Art · Lavanda Service</span><span><em class="todo">IČO, fakturační údaje</em></span></div>
+</footer>
+
+<script>
+(function(){
+  var clamp=function(v){return Math.max(0,Math.min(1,v))};
+  function prog(el){var r=el.getBoundingClientRect();var total=r.height-window.innerHeight;return clamp(-(r.top-72)/Math.max(1,total));}
+
+  /* video frames on scroll */
+  var N=140, frames=new Array(N), cv=document.getElementById('cv'), ctx=cv.getContext('2d'), last=-1;
+  var study=document.querySelector('.study'), bar=document.getElementById('pbar'), sSteps=study.querySelectorAll('.steps li');
+  function src(i){return 'frames/f'+String(i+1).padStart(3,'0')+'.jpg'}
+  function draw(i){
+    var im=frames[i]; if(!im||!im.complete||!im.naturalWidth){ for(var d=1;d<N;d++){var a=frames[i-d],b=frames[i+d]; if(a&&a.complete&&a.naturalWidth){im=a;break} if(b&&b.complete&&b.naturalWidth){im=b;break}} }
+    if(!im||!im.naturalWidth) return;
+    var cw=cv.width,ch=cv.height,s=Math.max(cw/im.naturalWidth,ch/im.naturalHeight),w=im.naturalWidth*s,h=im.naturalHeight*s;
+    ctx.drawImage(im,(cw-w)/2,(ch-h)/2,w,h);
+  }
+  function size(){var r=cv.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);last=-1}
+  function load(i){var im=new Image();im.onload=function(){if(last===-1||Math.abs(i-last)<2){last=-1;tick()}};im.src=src(i);frames[i]=im}
+  load(0);
+  var order=[];for(var st=8;st>=1;st=st/2){for(var i=0;i<N;i+=st){if(order.indexOf(i)<0)order.push(i)}}
+  var k=0;(function next(){for(var c=0;c<6&&k<order.length;c++,k++){if(!frames[order[k]])load(order[k])} if(k<order.length)setTimeout(next,60)})();
+
+  /* plan layers */
+  var plan=document.querySelector('.plan'), layers=plan.querySelectorAll('svg .ly'), pSteps=document.querySelectorAll('#planSteps li');
+
+  /* text reveal */
+  var rv=document.querySelector('.reveal');rv.innerHTML=rv.textContent.trim().split(/\s+/).map(function(w){return '<span>'+w+'</span>'}).join(' ');
+  var words=rv.querySelectorAll('span');
+
+  var queued=false;
+  function tick(){
+    queued=false;
+    var p=prog(study), idx=Math.round(p*(N-1));
+    if(idx!==last){draw(idx);last=idx}
+    bar.style.width=(p*100)+'%';
+    var si=Math.min(3,Math.floor(p*4));sSteps.forEach(function(li,i){li.classList.toggle('on',i===si)});
+    var pp=prog(plan), li=Math.min(4,Math.floor(pp*5.2));
+    layers.forEach(function(g,i){g.classList.toggle('on',i<=li&&plan.getBoundingClientRect().top<window.innerHeight*.6)});
+    pSteps.forEach(function(e,i){e.classList.toggle('on',i===li)});
+    var r=rv.getBoundingClientRect(), rp=clamp((window.innerHeight*.85-r.top)/(window.innerHeight*.55));
+    var on=Math.round(rp*words.length);words.forEach(function(w,i){w.classList.toggle('on',i<on)});
+  }
+  function req(){if(!queued){queued=true;requestAnimationFrame(tick)}}
+  window.addEventListener('scroll',req,{passive:true});
+  window.addEventListener('resize',function(){size();req()});
+  size();tick();
+
+  /* slats */
+  document.querySelectorAll('.slats').forEach(function(el){for(var i=0;i<7;i++){var u=document.createElement('u');u.style.left=(i*100/7)+'%';u.style.transitionDelay=(i*40)+'ms';el.appendChild(u)}});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.25});
+  document.querySelectorAll('.slats').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
